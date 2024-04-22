@@ -220,25 +220,35 @@ def quizGame():
     print(f"\n\nYour total score is {score}.")
 def concessionStandProgram():
     menu = {"pizza": 3.00,
-            "nachos": 4.50,
-            "popcorn": 6.00,
-            "fries": 2.50,
-            "chips": 1.00,
-            "pretzel": 3.50,
-            "soda": 3.00,
-            "lemonade": 4.25}
-    boughtItems = {}
+                "nachos": 4.50,
+                "popcorn": 6.00,
+                "fries": 2.50,
+                "chips": 1.00,
+                "pretzel": 3.50,
+                "soda": 3.00,
+                "lemonade": 4.25}
+    cart = []
     total = 0
+
+    print("--------- MENU ---------")
     for key, value in menu.items():
-        print(f"{key:15}: ${value}")
+        print(f"{key:10}: ${value:.2f}")
+    print("------------------------")
+
     while True:
-        boughtItem = input("What item would you like to buy [press 'Q' to quit]: ")
-        if boughtItem.upper() != "Q" and menu.get(boughtItem) is not None:
-            boughtItems.append(boughtItem)
-            total += menu.items(boughtItem)
-        else:
+        food = input("Select an item (q to quit): ").lower()
+        if food == "q":
             break
-        print(boughtItems)
+        elif menu.get(food) is not None:
+            cart.append(food)
+
+    print("------ YOUR ORDER ------")
+    for food in cart:
+        total += menu.get(food)
+        print(food, end=" ")
+
+    print()
+    print(f"Total is: ${total:.2f}")
 
 
 
