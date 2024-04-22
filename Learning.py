@@ -1,6 +1,6 @@
 import math
 import time
-def mad_libs():
+def createMadLibsStory():
     adjective1 = input("Enter an adjective: ")
     verb = input("Enter a verb: ")
     adjective2 = input("Enter an adjective: ")
@@ -10,96 +10,97 @@ def mad_libs():
     print(f"In an exhibit, I saw a {noun}.")
     print(f"The {noun} was {adjective2} and {verb}ing.")
     print(f"I was {adjective3}.")
-def area_of_rectangle():
-    length = float(input("Enter the length of the rectangle [In meter(s)]: "))
-    width = float(input("Enter the width of the rectangle [In meter(s)]: "))
+def calculateRectangleArea():
+    length = float(input("Enter the length of the rectangle (in meters): "))
+    width = float(input("Enter the width of the rectangle (in meters): "))
     area = length * width
-    print(f"The area of the rectangle is {area:,.3f} m^2")
-def area_of_cube():
-    length = float(input("Enter the length of the cube [In meter(s)]: "))
-    width = float(input("Enter the width of the cube [In meter(s)]: "))
-    height = float(input("Enter the height of the cube [In meter(s)]: "))
+    print(f"The area of the rectangle is {area:,.3f} square meters.")
+def calculateCubeVolume():
+    length = float(input("Enter the length of the cube (in meters): "))
+    width = float(input("Enter the width of the cube (in meters): "))
+    height = float(input("Enter the height of the cube (in meters): "))
     volume = length * width * height
-    print(f"The area of the rectangle is {volume:,.3f} m^3")
-def circumference_of_circle():
-    radius = float(input("Enter the radius of a circle[In meter/s]: "))
+    print(f"The volume of the cube is {volume:,.3f} cubic meters.")
+def calculateCircleCircumference():
+    radius = float(input("Enter the radius of the circle (in meters): "))
     circumference = 2 * math.pi * radius
-    print(f"The circumference of the circle is {circumference:,.5f} meter/s.")
-def area_of_circle():
-    radius = float(input("Enter the radius of a circle[In meter/s]: "))
-    area = math.pi * pow(radius, 2)
-    print(f"The area of the circle is {area:,.5f} meter^2.")
-def hypotenuse_of_right_triangle():
-    side_a = float(input("What is the length of side A [In meter/s]: "))
-    side_b = float(input("What is the length of side B [In meter/s]: "))
-    side_c = math.sqrt(pow(side_a, 2) + pow(side_b, 2))
-    print(f"The hypotenuse is {side_c:,.3f} meter/s.")
-def calculator_program():
-    num1 = int(input("Enter the first number: "))
-    operator = input("Enter the arithmetic operator: ")
-    num2 = int(input("Enter the second number: "))
+    print(f"The circumference of the circle is {circumference:,.5f} meters.")
+def calculateCircleArea():
+    radius = float(input("Enter the radius of the circle (in meters): "))
+    area = math.pi * math.pow(radius, 2)
+    print(f"The area of the circle is {area:,.5f} square meters.")
+def calculateHypotenuse():
+    side_a = float(input("Enter the length of side A (in meters): "))
+    side_b = float(input("Enter the length of side B (in meters): "))
+    side_c = math.sqrt(math.pow(side_a, 2) + math.pow(side_b, 2))
+    print(f"The length of the hypotenuse is {side_c:,.3f} meters.")
+def calculateArithmeticExpression():
+  firstNumber = int(input("Enter the first number: "))
+  operator = input("Enter the arithmetic operator (+, -, *, /): ")
+  secondNumber = int(input("Enter the second number: "))
+  if operator in "+-*/":
     if operator == "+":
-        print(num1 + num2)
+      print(firstNumber + secondNumber)
     elif operator == "-":
-        print(num1 - num2)
+      print(firstNumber - secondNumber)
     elif operator == "*":
-        print(num1 * num2)
-    elif operator == "/":
-        print(num1 / num2)
+      print(firstNumber * secondNumber)
     else:
-        print("Something Went Wrong..............  :( ")
-def weight_converter():
-    weight = float(input("What is the weight: "))
-    unit = input("Is it in Kilograms or Pounds [K,L]: ").upper()
-    if unit == "K":
-        weight = weight * 2.205
-        print(f"The weight in pounds is {weight:,.5f}.")
-    elif unit == "L":
-        weight = weight / 2.205
-        print(f"The weight in kilograms is {weight:,.5f}.")
-    else:
-        print("Encountered unknown unit. Please try again.")
-def temperature_converter():
-    entered_temperature = int(input("What is the temperature you want to convert: "))
-    entered_temperature_unit = input("Which unit is the temperature in [Celsius(C), Fahrenheit(F), Kelvin(K)]:").upper()
-    conversion_temperature_unit = input("In which unit do you want the temperature to be in [Celsius(C), Fahrenheit(F), Kelvin(K)]:").upper()
-    if entered_temperature_unit == "C":
-        if entered_temperature < -273.15:
+      print(firstNumber / secondNumber)
+  else:
+    print("Invalid operator. Please use +, -, *, or /.")
+def convertWeight():
+  weight = float(input("What is the weight: "))
+  unit = input("Is it in Kilograms or Pounds (K,L): ").upper()
+  if unit == "K":
+    weight *= 2.205
+    print(f"The weight in pounds is {weight:,.5f}.")
+  elif unit == "L":
+    weight /= 2.205 
+    print(f"The weight in kilograms is {weight:,.5f}.")
+  else:
+    print("Encountered unknown unit. Please try again.")
+def convertTemperature():
+    enteredTemperature = int(input("What is the temperature you want to convert: "))
+    enteredTemperatureUnit = input("Which unit is the temperature in [Celsius(C), Fahrenheit(F), Kelvin(K)]: ").upper()
+    conversionTemperatureUnit = input("In which unit do you want the temperature to be in [Celsius(C), Fahrenheit(F), Kelvin(K)]: ").upper()
+    if enteredTemperatureUnit == "C":
+        if enteredTemperature < -273.15:
             print("Temperature below -273.15 doesn't exist in Celsius scale.")
         else:
-            if conversion_temperature_unit == "K":
-                converted_temperature = entered_temperature + 273.15
-                print(f"The temperature in Kelvin is: {converted_temperature:,.3f}")
-            elif conversion_temperature_unit == "F":
-                converted_temperature = (9 * entered_temperature) / 5 + 32
-                print(f"The temperature in Fahrenheit is: {converted_temperature:,.3f}")
-    elif entered_temperature_unit == "F":
-        if entered_temperature < -459.67:
+            if conversionTemperatureUnit == "K":
+                convertedTemperature = enteredTemperature + 273.15
+                print(f"The temperature in Kelvin is: {convertedTemperature:,.3f}")
+            elif conversionTemperatureUnit == "F":
+                convertedTemperature = (9 * enteredTemperature) / 5 + 32
+                print(f"The temperature in Fahrenheit is: {convertedTemperature:,.3f}")
+    elif enteredTemperatureUnit == "F":
+        if enteredTemperature < -459.67:
             print("Temperature below -459.67 doesn't exist in Fahrenheit scale.")
         else:
-            if conversion_temperature_unit == "C":
-                converted_temperature = (entered_temperature - 32) * 5 / 9
-                print(f"The temperature in Celsius is: {converted_temperature:,.3f}")
-            elif conversion_temperature_unit == "K":
-                converted_temperature = ((entered_temperature - 32) * 5 / 9) + 273.15
-                print(f"The temperature in Kelvin is: {converted_temperature:,.3f}")
-    elif entered_temperature_unit == "K":
-        if entered_temperature < 0:
+            if conversionTemperatureUnit == "C":
+                convertedTemperature = (enteredTemperature - 32) * 5 / 9
+                print(f"The temperature in Celsius is: {convertedTemperature:,.3f}")
+            elif conversionTemperatureUnit == "K":
+                convertedTemperature = ((enteredTemperature - 32) * 5 / 9) + 273.15
+                print(f"The temperature in Kelvin is: {convertedTemperature:,.3f}")
+    elif enteredTemperatureUnit == "K":
+        if enteredTemperature < 0:
             print("Temperature below 0 doesn't exist in Kelvin scale.")
         else:
-            if conversion_temperature_unit == "C":
-                converted_temperature = entered_temperature - 273.15
-                print(f"The temperature in Celsius is: {converted_temperature:,.3f}")
-            elif conversion_temperature_unit == "F":
-                converted_temperature = (9 * (entered_temperature - 273.15)) / 5 + 32
-                print(f"The temperature in Fahrenheit is: {converted_temperature:,.3f}")
+            if conversionTemperatureUnit == "C":
+                convertedTemperature = enteredTemperature - 273.15
+                print(f"The temperature in Celsius is: {convertedTemperature:,.3f}")
+            elif conversionTemperatureUnit == "F":
+                convertedTemperature = (9 * (enteredTemperature - 273.15)) / 5 + 32
+                print(f"The temperature in Fahrenheit is: {convertedTemperature:,.3f}")
     else:
         print("Encountered unknown unit. Please try again.")
-def email_slicer():
+def sliceEmailAddress():
     email = input("Enter your e-mail: ")
     username = email[:email.index("@")]
-    domain = email[email.index("@")+1:]
-    print(f"Your Username is {username}, and your Domain Name is {domain}.")
+    domain = email[email.index("@") + 1:]
+    print(f"Your username is {username}, and your domain name is {domain}.")
 def arcDistanceCalculator():
     radius = float(input("What is the radius of the circle [In meter/s]: "))
     theta = float(input("What is the theta angle of the arc: "))
@@ -137,8 +138,8 @@ def volumeOfSphere():
 def surfaceAreaOfThePrism():
     areaOfTheBase = float(input("What is the area of the base: "))  
     perimeterOfTheBase = float(input("What is the perimeter of the base: ")) 
-    height - float(input("What is the height of the prism"))
-    surfaceArea = 2 * areaOfTheBase + perimeter * height
+    height = float(input("What is the height of the prism"))
+    surfaceArea = 2 * areaOfTheBase + perimeterOfTheBase * height
     print(f"The surface area of the prism is {surfaceArea:,.3f}")
 def creditCardValidatorProgram():
     sumOfOddNumbers = 0
@@ -217,3 +218,14 @@ def quizGame():
         questionNumber += 1
     print("\n\n\n------------------------------")
     print(f"\n\nYour total score is {score}.")
+def concessionStandProgram():
+    menu = {"pizza": 3.00,
+            "nachos": 4.50,
+            "popcorn": 6.00,
+            "fries": 2.50,
+            "chips": 1.00,
+            "pretzel": 3.50,
+            "soda": 3.00,
+            "lemonade": 4.25}
+    cart = {}
+    total = 0
