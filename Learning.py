@@ -247,5 +247,7 @@ def concessionStandProgram():
     print()
     print(f"Total is: ${total:.2f}")
 def ramdomNumberGenarator():
-    minNumber = 
-print(help(random))
+    minNumber = int(input("What is the minimun number: "))
+    maxNumber = int(input("What is the maximum number: "))
+    randomNumber = random(minNumber, maxNumber)
+    print(randomNumber)
