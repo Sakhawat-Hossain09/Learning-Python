@@ -227,5 +227,29 @@ def concessionStandProgram():
             "pretzel": 3.50,
             "soda": 3.00,
             "lemonade": 4.25}
-    cart = {}
+    boughtItems = {}
     total = 0
+    for key, value in menu.items():
+        print(f"{key:15}: ${value}")
+    while True:
+        boughtItem = input("What item would you like to buy [press 'Q' to quit]: ")
+        if boughtItem.upper() != "Q" and menu.get(boughtItem) is not None:
+            boughtItems.append(boughtItem)
+            total += menu.items(boughtItem)
+        else:
+            break
+        print(boughtItems)
+
+
+
+
+
+
+
+
+
+
+
+
+
+concessionStandProgram()
