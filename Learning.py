@@ -11,45 +11,6 @@ def createMadLibsStory():
     print(f"In an exhibit, I saw a {noun}.")
     print(f"The {noun} was {adjective2} and {verb}ing.")
     print(f"I was {adjective3}.")
-def calculateRectangleArea():
-    length = float(input("Enter the length of the rectangle (in meters): "))
-    width = float(input("Enter the width of the rectangle (in meters): "))
-    area = length * width
-    print(f"The area of the rectangle is {area:,.3f} square meters.")
-def calculateCubeVolume():
-    length = float(input("Enter the length of the cube (in meters): "))
-    width = float(input("Enter the width of the cube (in meters): "))
-    height = float(input("Enter the height of the cube (in meters): "))
-    volume = length * width * height
-    print(f"The volume of the cube is {volume:,.3f} cubic meters.")
-def calculateCircleCircumference():
-    radius = float(input("Enter the radius of the circle (in meters): "))
-    circumference = 2 * math.pi * radius
-    print(f"The circumference of the circle is {circumference:,.5f} meters.")
-def calculateCircleArea():
-    radius = float(input("Enter the radius of the circle (in meters): "))
-    area = math.pi * math.pow(radius, 2)
-    print(f"The area of the circle is {area:,.5f} square meters.")
-def calculateHypotenuse():
-    side_a = float(input("Enter the length of side A (in meters): "))
-    side_b = float(input("Enter the length of side B (in meters): "))
-    side_c = math.sqrt(math.pow(side_a, 2) + math.pow(side_b, 2))
-    print(f"The length of the hypotenuse is {side_c:,.3f} meters.")
-def calculateArithmeticExpression():
-  firstNumber = int(input("Enter the first number: "))
-  operator = input("Enter the arithmetic operator (+, -, *, /): ")
-  secondNumber = int(input("Enter the second number: "))
-  if operator in "+-*/":
-    if operator == "+":
-      print(firstNumber + secondNumber)
-    elif operator == "-":
-      print(firstNumber - secondNumber)
-    elif operator == "*":
-      print(firstNumber * secondNumber)
-    else:
-      print(firstNumber / secondNumber)
-  else:
-    print("Invalid operator. Please use +, -, *, or /.")
 def convertWeight():
   weight = float(input("What is the weight: "))
   unit = input("Is it in Kilograms or Pounds (K,L): ").upper()
@@ -102,16 +63,6 @@ def sliceEmailAddress():
     username = email[:email.index("@")]
     domain = email[email.index("@") + 1:]
     print(f"Your username is {username}, and your domain name is {domain}.")
-def arcDistanceCalculator():
-    radius = float(input("What is the radius of the circle [In meter/s]: "))
-    theta = float(input("What is the theta angle of the arc: "))
-    arcDistance = (theta / 360) * 2 * math.pi * radius
-    print(f"The arc distance is {arcDistance} meter/s.")
-def sectorAreaCalculator():
-    radius = float(input("What is the radius of the circle [In meter/s]: "))
-    theta = float(input("What is the theta angle of the arc: "))
-    arcDistance = (theta / 360) * 2 * math.pi * pow(radius, 2)
-    print(f"The sector is {arcDistance} meter^2/s.")
 def countdownProgram():
     try:
         enteredTime = input("How long do you want the timer to last [Hour:Minute:Second] : ")
@@ -128,20 +79,6 @@ def countdownProgram():
         print("Countdown finished successfully.")
     except: ValueError
     print("Check if entered values are correct.")
-def surfaceAreaOfSphere():
-    radius = float(input("What is the radius of the sphere [In meter/s]: "))
-    surfaceArea = 4 * math.pi * pow(radius, 2)
-    print(f"The surface area of the sphere is {surfaceArea:,.3f} meter^2/s")
-def volumeOfSphere():
-    radius = float(input("What is the radius of the sphere [In meter/s]: "))
-    volume = 4/3 * math.pi * pow(radius, 3)
-    print(f"The volume of the sphere is {volume:,.3f} meter^3/s")
-def surfaceAreaOfThePrism():
-    areaOfTheBase = float(input("What is the area of the base: "))  
-    perimeterOfTheBase = float(input("What is the perimeter of the base: ")) 
-    height = float(input("What is the height of the prism"))
-    surfaceArea = 2 * areaOfTheBase + perimeterOfTheBase * height
-    print(f"The surface area of the prism is {surfaceArea:,.3f}")
 def creditCardValidatorProgram():
     sumOfOddNumbers = 0
     sumOfEvenNumbers = 0
