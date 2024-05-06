@@ -34,3 +34,4 @@ pointsInfo = open(pointsFile, 'r')
 points = int(pointsInfo)
 
 convertToint("Progects//lifePointTracker//lifePointTracker.txt")
+'''if userRequest == "get balence -a": print(f"Your point is {points.read()}") elif userRequest == "check avltm -a": print("Hello world") elif points >= shortFormVideo[1]: print(shortFormVideo[0]'''
