@@ -9,14 +9,23 @@ def convertToint(filename):
   except ValueError:
     print(f"Error: The content of '{filename}' is not a valid number.")
     return None
-convertToint("lifePointTracker.txt")
-shortFormVideo  = ("You can now watch 10 short form videos.", 10)
-longVideo = ("You can now watch 1 long form video. ", 10)
 
-
-pointsFile = "Progects/lifePointTracker/lifePointTracker.txt"
-pointsInfo = open(pointsFile, 'r')
-points = int(pointsInfo)
-
-convertToint("Progects//lifePointTracker//lifePointTracker.txt")
-'''if userRequest == "get balence -a": print(f"Your point is {points.read()}") elif userRequest == "check avltm -a": print("Hello world") elif points >= shortFormVideo[1]: print(shortFormVideo[0]'''
+def commendInput():
+  print("To check your current balance type ['get balance -a']")
+  print("To check what you can do type['check avltm -a']")
+  print("To bye something type ['get (item name)]")
+  print("")
+  userRequest = input("What do you want to do: ")
+  return userRequest
+commendInput = commendInput()
+point = convertToint("Progects//lifePointTracker//lifePointTracker.txt")
+if commendInput == "get balance -a":
+  print(f"Your current score is {point}")
+elif commendInput == "check avltm -a":
+  match point:
+    case 10:
+      print("\nYou can watch 10 short form video type ['shortVideo'] to purchase this item.")
+    case 10:
+      print("\nYou can watch 1 long form video type ['longVideo'] to purchase this item.")
+    case _:
+      print("You can't bye anything.")
