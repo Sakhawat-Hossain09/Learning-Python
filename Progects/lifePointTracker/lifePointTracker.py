@@ -9,22 +9,7 @@ def convertToint(filename):
   except ValueError:
     print(f"Error: The content of '{filename}' is not a valid number.")
     return None
-
-def commendInput():
-  print("Available functions are listed below:")
-  print("1. check balance ['get balance -a']")
-  print("2. See what can be bought ['check avltm -a']")
-  print("2. Add to your balance ['add balance ('Amount')']")
-  userRequest = input("What do you want to do: ")
-  if userRequest != " ":
-    return None
-
-  else:
-    print("Redo the procces.")
-    commendInput()
-    return str(userRequest)
-
-commendInput()
+convertToint("lifePointTracker.txt")
 shortFormVideo  = ("You can now watch 10 short form videos.", 10)
 longVideo = ("You can now watch 1 long form video. ", 10)
 
