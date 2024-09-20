@@ -7,13 +7,24 @@ crashing the program.
 
 """
 def finance_calculator(monthly_earning: float, tax_rate: float, currency: str) -> None:
-    yearly_earning: float = monthly_earning * 12
     monthly_tax_deduction = monthly_earning * (tax_rate / 100)
-    yearly_tax_deduction = monthly_tax_deduction * 12
     monthly_net_earning = monthly_earning - monthly_tax_deduction
+    yearly_earning: float = monthly_earning * 12
+    yearly_tax_deduction = monthly_tax_deduction * 12
     yearly_net_earning = monthly_net_earning * 12
 
 
     print("----------------------------------------------------------------")
-    print(f"Your monthly earning is: {monthly_earning}")
+    print(f"Your monthly earning is: {monthly_earning}.")
+    print(f"Your tax rate is {tax_rate}.")
+    print(f"Your monthly tax deduction is {monthly_tax_deduction}.")
+    print(f"Your net income is {monthly_net_earning}.")
+    print(f"Your yearly earning is: {yearly_earning}.")
+    print(f"Your yearly tax deduction is: {yearly_tax_deduction}.")
+    print(f"Your yearly net income is: {yearly_net_earning}.")
+    print("----------------------------------------------------------------")
 
+
+
+
+finance_calculator(monthly_earning=10000, tax_rate=35.7, currency="USD")
