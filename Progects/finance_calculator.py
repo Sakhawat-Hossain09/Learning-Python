@@ -27,4 +27,4 @@ def finance_calculator(monthly_earning: float, tax_rate: float, currency: str) -
 
 
 
-finance_calculator(monthly_earning=10000, tax_rate=35.7, currency="USD")
+#finance_calculator(monthly_earning=10000, tax_rate=35.7, currency="USD")
