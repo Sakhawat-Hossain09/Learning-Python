@@ -1,4 +1,4 @@
-from project_root.Utility.Utilities import is_currency_supported
+#from Utilities import is_currency_supported
 
 
 def expense_splitter(total_bill_amount: float, number_of_persons: int, currency: str, tip_percentage: float = 0, tax_rate: float = 0) -> None:
