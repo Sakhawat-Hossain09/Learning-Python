@@ -5,23 +5,6 @@ class Mathematical:
     A class to perform various mathematical operations.
     """
 
-    def is_currency_supported(self, currency: str) -> bool:
-        """
-        Checks if a given currency is supported.
-
-        Args:
-            currency: The currency to check.
-
-        Returns:
-            True if the currency is supported, False otherwise.
-        """
-        supported_currencies: tuple = ("USD", "EUR", "JPY", "GBP", "CAD", "CHF", "AUD", "NZD", "SEK", "NOK", "DKK", "INR", "CNY", "BRL", "RUB", "ZAR", "KRW", "MXN", "TRY")
-
-        if not isinstance(currency, str):
-            raise ValueError("Currency must be a string")
-
-        currency = currency.upper()
-        return currency in supported_currencies
 
     def arc_distance_calculator(self, radius: float, theta_degrees: float) -> float:
         """
@@ -185,9 +168,81 @@ class Mathematical:
         pass
 
 
-def main():
-    mathematical = Mathematical()
-    print(mathematical.calculate(first_number=100, second_number=10, operator="+"))
+    def is_currency_supported(self, currency: str) -> bool:
+        """
+        Checks if a given currency is supported.
 
+        Args:
+            currency: The currency to check.
+
+        Returns:
+            True if the currency is supported, False otherwise.
+        """
+        supported_currencies: tuple = ("USD", "EUR", "JPY", "GBP", "CAD", "CHF", "AUD", "NZD", "SEK", "NOK", "DKK", "INR", "CNY", "BRL", "RUB", "ZAR", "KRW", "MXN", "TRY")
+
+        if not isinstance(currency, str):
+            raise ValueError("Currency must be a string")
+
+        currency = currency.upper()
+        return currency in supported_currencies
+def main():
+    Mathematical()
+    radius = input("radius")
+    theta_degree = input("theta_degree")
+    length = input("length")
+    width = input("width")
+    height = input("height")
+
+    # print(Mathematical.arc_distance_calculator(radius=radius, theta_degrees=theta_degree))
+    # print(Mathematical.calculate(first_number=10, operator="*", second_number=20))
+    # print(Mathematical.calculate_circle_area(radius=radius))
+    # print(Mathematical.calculate_circle_circumference(radius=radius))
+    # print(Mathematical.calculate_cube_volume(length=length, width=width, height=height))
+    # print(Mathematical.calculate_hypotenuse(side_a=85, side_b=43))
+    # print(Mathematical.calculate_rectangle_area(length=length, width=width))
+
+
+    # # Create an instance of the Mathematical class
+    # math_obj = Mathematical()
+
+    # # Function calls with dummy arguments
+    # arc_distance = math_obj.arc_distance_calculator(radius=5.0, theta_degrees=45.0)
+
+    # circle_area = math_obj.calculate_circle_area(radius=3.0)
+
+    # cube_volume = math_obj.calculate_cube_volume(length=2.0, width=3.0, height=4.0)
+
+    # circle_circumference = math_obj.calculate_circle_circumference(radius=5.0)
+
+    # hypotenuse = math_obj.calculate_hypotenuse(side_a=3.0, side_b=4.0)
+
+    # rectangle_area = math_obj.calculate_rectangle_area(length=5.0, width=3.0)
+
+    # sphere_surface_area = math_obj.surface_area_of_sphere(radius=2.5)
+
+    # prism_surface_area = math_obj.surface_area_of_prism(area_of_base=10.0, perimeter_of_base=14.0, height=5.0)
+
+    # sphere_volume = math_obj.volume_of_sphere(radius=3.0)
+
+    # calculation_result = math_obj.calculate(first_number=10.0, operator="+", second_number=5.0)
+
+    # # The __init__ method is called automatically when creating the instance, so we don't need to call it explicitly
+
+    # is_supported = math_obj.is_currency_supported(currency="USD")
+
+    # # Print the results
+    # print(f"Arc Distance: {arc_distance}")
+    # print(f"Circle Area: {circle_area}")
+    # print(f"Cube Volume: {cube_volume}")
+    # print(f"Circle Circumference: {circle_circumference}")
+    # print(f"Hypotenuse: {hypotenuse}")
+    # print(f"Rectangle Area: {rectangle_area}")
+    # print(f"Sphere Surface Area: {sphere_surface_area}")
+    # print(f"Prism Surface Area: {prism_surface_area}")
+    # print(f"Sphere Volume: {sphere_volume}")
+    # print(f"Calculation Result: {calculation_result}")
+    # print(f"Is Currency Supported: {is_supported}")
+
+    
 if __name__ == "__main__":
     main()
