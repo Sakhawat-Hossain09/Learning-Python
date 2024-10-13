@@ -1,5 +1,79 @@
 import math
 
+class Progects:
+    def __init__(self):
+        pass        
+
+
+#WORK IS PROGRESS
+
+    # def concession_stand_program(self) -> None:
+    #     menu = {"pizza": 3.00,
+    #             "nachos": 4.50,
+    #             "popcorn": 6.00,
+    #             "fries": 2.50,
+    #             "chips": 1.00,
+    #             "pretzel": 3.50,
+    #             "soda": 3.00,
+    #             "lemonade": 4.25}
+    #     cart = []
+    #     total = 0
+    #     print("--------- MENU ---------")
+    #     for key, value in menu.items():
+    #         print(f"{key:10}: ${value:.2f}")
+    #     print("------------------------")
+    #     while True:
+    #         food = input("Select an item (q to quit): ").lower()
+    #         if food == "q":
+    #             break
+    #         elif menu.get(food) is not None:
+    #             cart.append(food)
+    #     print("------ YOUR ORDER ------")
+    #     for food in cart:
+    #         total += menu.get(food)
+    #         print(food, end=" ")
+    #     print()
+    #     print(f"Total is: ${total:.2f}")
+
+    
+    def convertTemperature(self, entered_temperature: float, entered_temperature_unit: str, conversion_temperature_unit: str) -> float:
+        converted_temperature: float
+        if entered_temperature_unit == "C":
+            if entered_temperature < -273.15:
+                print("Temperature below -273.15 doesn't exist in Celsius scale.")
+            else:
+                if conversion_temperature_unit == "K":
+                        converted_temperature = entered_temperature + 273.15
+                elif conversion_temperature_unit == "F":
+                        converted_temperature = (9 * entered_temperature) / 5 + 32
+        elif entered_temperature_unit == "F":
+            if entered_temperature < -459.67:
+                print("Temperature below -459.67 doesn't exist in Fahrenheit scale.")
+            else:
+                if conversion_temperature_unit == "C":
+                    converted_temperature = (entered_temperature - 32) * 5 / 9
+                elif conversion_temperature_unit == "K":
+                    converted_temperature = ((entered_temperature - 32) * 5 / 9) + 273.15
+        elif entered_temperature_unit == "K":
+            if entered_temperature < 0:
+                print("Temperature below 0 doesn't exist in Kelvin scale.")
+            else:
+                if conversion_temperature_unit == "C":
+                    converted_temperature = entered_temperature - 273.15
+                elif conversion_temperature_unit == "F":
+                    converted_temperature = (9 * (entered_temperature - 273.15)) / 5 + 32
+        else:
+            print("Encountered unknown unit. Please try again.")
+
+        return converted_temperature
+
+
+
+
+
+
+
+
 class Mathematical:
     """
     A class to perform various mathematical operations.
@@ -185,13 +259,33 @@ class Mathematical:
 
         currency = currency.upper()
         return currency in supported_currencies
+
+
+
 def main():
-    Mathematical()
-    radius = input("radius")
-    theta_degree = input("theta_degree")
-    length = input("length")
-    width = input("width")
-    height = input("height")
+
+    progects = Progects()
+
+    progects.concession_stand_program()
+    print(progects.convertTemperature(entered_temperature=10, entered_temperature_unit="c", conversion_temperature_unit="f"))
+
+
+
+
+
+
+
+
+
+
+
+
+    #Mathematical()
+    # radius = input("radius")
+    # theta_degree = input("theta_degree")
+    # length = input("length")
+    # width = input("width")
+    # height = input("height")
 
     # print(Mathematical.arc_distance_calculator(radius=radius, theta_degrees=theta_degree))
     # print(Mathematical.calculate(first_number=10, operator="*", second_number=20))
