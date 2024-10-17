@@ -1,40 +1,180 @@
 import math
 import time
+import random
 
 class Progects:
     def __init__(self):
         pass        
 
 
-#WORK IS PROGRESS
 
-    # def concession_stand_program(self) -> None:
-    #     menu = {"pizza": 3.00,
-    #             "nachos": 4.50,
-    #             "popcorn": 6.00,
-    #             "fries": 2.50,
-    #             "chips": 1.00,
-    #             "pretzel": 3.50,
-    #             "soda": 3.00,
-    #             "lemonade": 4.25}
-    #     cart = []
-    #     total = 0
-    #     print("--------- MENU ---------")
-    #     for key, value in menu.items():
-    #         print(f"{key:10}: ${value:.2f}")
-    #     print("------------------------")
-    #     while True:
-    #         food = input("Select an item (q to quit): ").lower()
-    #         if food == "q":
-    #             break
-    #         elif menu.get(food) is not None:
-    #             cart.append(food)
-    #     print("------ YOUR ORDER ------")
-    #     for food in cart:
-    #         total += menu.get(food)
-    #         print(food, end=" ")
-    #     print()
-    #     print(f"Total is: ${total:.2f}")
+
+    def sliceEmailAddress(self, email: str) -> None:
+        username = email[:email.index("@")]
+        domain = email[email.index("@") + 1:]
+        print(f"Your username is {username}, and your domain name is {domain}.")
+
+
+
+    #TODO: add variables in the bracket thing
+    def shoppingCart(self):
+        items = []
+        prices = []
+        total = 0
+        while True:
+            item = input("What item would you like to buy [press 'Q' to quit]: ")
+            if item.upper() != "Q":
+                price = int(input("What is the price of the item: "))
+                items.append(item)
+                prices.append(price)
+                total += price
+            else:
+                break
+        print(f"You have bought {items} and the prices are {prices} and total is ${total}.")
+
+
+
+    def ramdomNumberGenarator(self, min: float, max: float):
+        randomNumber = random.uniform(min, max)  #ai did this
+        print(randomNumber)
+
+
+
+    def quizGame(self):
+        questions = [
+            "How many elements does the periodic table have?",
+            "What is the farthest planet in our solar system?",
+            "Which animal lays the largest eggs?",
+            "What is the biggest planet in our solar system?",
+            "How many bones are there in a human body?",
+            "What is the most abundant gas in Earth's atmosphere?",
+            "Which year was Bangladesh declared independent?",
+            "What is the smallest planet in our solar system?",
+            "How many planets are there in our solar system?",
+            "What is the hottest planet in our solar system?"
+        ]
+
+        options = [
+            ["A. 120", "B. 180", "C. 118", "D. 121"],
+            ["A. Uranus", "B. Neptune", "C. Jupiter", "D. Mars"],
+            ["A. Horse", "B. Whale", "C. Ostrich", "D. Elephant"],
+            ["A. Jupiter", "B. Saturn", "C. Neptune", "D. Mercury"],
+            ["A. 206", "B. 200", "C. 131", "D. 231"],
+            ["A. Nitrogen", "B. Oxygen", "C. Carbon-Dioxide", "D. Hydrogen"],
+            ["A. 1870", "B. 1871", "C. 1970", "D. 1971"],
+            ["A. Mercury", "B. Venus", "C. Mars", "D. Earth"],
+            ["A. 8", "B. 9", "C. 6", "D. 7"],
+            ["A. Mercury", "B. Earth", "C. Venus", "D. Uranus"]
+        ]
+
+        answers = [
+            "C",
+            "B",
+            "C",
+            "A",
+            "A",
+            "A",
+            "D",
+            "A",
+            "A",
+            "C"
+        ]
+
+        guesses = []
+        score = 0
+        time_limit = 30  # Time limit in seconds
+
+        for question_number in range(len(questions)):
+            print(f"Question {question_number + 1}: {questions[question_number]}")
+            print("---------------")
+            for option in options[question_number]:
+                print(option)
+
+            start_time = time.time()
+            guess = input("Enter the answer [A,B,C,D]: ").upper()
+            end_time = time.time()
+
+            elapsed_time = end_time - start_time
+            if elapsed_time > time_limit:
+                print(f"Time's up! The correct answer is {answers[question_number]}.\n")
+                continue
+
+            guesses.append(guess)
+            if guess == answers[question_number]:
+                score += 1
+                print("\nCORRECT\n")
+            else:
+                print("INCORRECT")
+                print(f"The right answer is {answers[question_number]}.\n")
+
+        print("\n\n\n------------------------------")
+        print(f"\n\nYour total score is {score}.")
+
+
+        def creditCardValidatorProgram(self, credit_card_number: str) -> None:
+            sum_of_odd_digits = 0
+            sum_of_even_digits = 0
+            total_sum = 0
+            credit_card_number = credit_card_number.replace("-", "")
+            credit_card_number = credit_card_number.replace(" ", "")
+            reversed_credit_card_number = credit_card_number[::-1]
+            
+            for digit in reversed_credit_card_number[::2]:
+                sum_of_odd_digits += int(digit)
+            
+            for digit in reversed_credit_card_number[1::2]:
+                doubled_digit = int(digit) * 2
+                if doubled_digit >= 10:
+                    sum_of_even_digits += (1 + (doubled_digit % 10))
+                else:
+                    sum_of_even_digits += doubled_digit
+            
+            total_sum = sum_of_even_digits + sum_of_odd_digits
+            
+            if total_sum % 10 == 0:
+                print(f"The credit card number ({credit_card_number}) is valid.")
+            else:
+                print(f"The credit card number ({credit_card_number}) is not valid.")
+
+
+
+    def createMadLibsStory(self, adjective1: str, adjective2: str, adjective3:str, adjective4: str, verb:str, noun:str,) -> None:
+        print(f"Today I went to a {adjective1} zoo.")
+        print(f"In an exhibit, I saw a {noun}.")
+        print(f"The {noun} was {adjective2} and {verb}ing.")
+        print(f"I was {adjective4}.")
+
+
+
+    #TODO: fix line 174 in the concession stand program
+
+    def concession_stand_program(self) -> None:
+        menu = {"pizza": 3.00,
+                "nachos": 4.50,
+                "popcorn": 6.00,
+                "fries": 2.50,
+                "chips": 1.00,
+                "pretzel": 3.50,
+                "soda": 3.00,
+                "lemonade": 4.25}
+        cart = []
+        total = 0
+        print("--------- MENU ---------")
+        for key, value in menu.items():
+            print(f"{key:10}: ${value:.2f}")
+        print("------------------------")
+        while True:
+            food = input("Select an item (q to quit): ").lower()
+            if food == "q":
+                break
+            elif menu.get(food) is not None:
+                cart.append(food)
+        print("------ YOUR ORDER ------")
+        for food in cart:
+#            total += menu.get(food)
+            print(food, end=" ")
+        print()
+        print(f"Total is: ${total:.2f}")
 
     
     def convertTemperature(self, entered_temperature: float, entered_temperature_unit: str, conversion_temperature_unit: str) -> float:
@@ -69,6 +209,7 @@ class Progects:
         return converted_temperature
 
 
+
     def countdownProgram(self, starttingTime: str) -> None:
 
         try:
@@ -85,8 +226,6 @@ class Progects:
             print("Countdown finished successfully.")
         except: ValueError
         print("Check if entered values are correct.")
-
-
 
 
 
@@ -291,71 +430,5 @@ def main():
 
 
 
-
-
-
-
-
-
-
-
-    #Mathematical()
-    # radius = input("radius")
-    # theta_degree = input("theta_degree")
-    # length = input("length")
-    # width = input("width")
-    # height = input("height")
-
-    # print(Mathematical.arc_distance_calculator(radius=radius, theta_degrees=theta_degree))
-    # print(Mathematical.calculate(first_number=10, operator="*", second_number=20))
-    # print(Mathematical.calculate_circle_area(radius=radius))
-    # print(Mathematical.calculate_circle_circumference(radius=radius))
-    # print(Mathematical.calculate_cube_volume(length=length, width=width, height=height))
-    # print(Mathematical.calculate_hypotenuse(side_a=85, side_b=43))
-    # print(Mathematical.calculate_rectangle_area(length=length, width=width))
-
-
-    # # Create an instance of the Mathematical class
-    # math_obj = Mathematical()
-
-    # # Function calls with dummy arguments
-    # arc_distance = math_obj.arc_distance_calculator(radius=5.0, theta_degrees=45.0)
-
-    # circle_area = math_obj.calculate_circle_area(radius=3.0)
-
-    # cube_volume = math_obj.calculate_cube_volume(length=2.0, width=3.0, height=4.0)
-
-    # circle_circumference = math_obj.calculate_circle_circumference(radius=5.0)
-
-    # hypotenuse = math_obj.calculate_hypotenuse(side_a=3.0, side_b=4.0)
-
-    # rectangle_area = math_obj.calculate_rectangle_area(length=5.0, width=3.0)
-
-    # sphere_surface_area = math_obj.surface_area_of_sphere(radius=2.5)
-
-    # prism_surface_area = math_obj.surface_area_of_prism(area_of_base=10.0, perimeter_of_base=14.0, height=5.0)
-
-    # sphere_volume = math_obj.volume_of_sphere(radius=3.0)
-
-    # calculation_result = math_obj.calculate(first_number=10.0, operator="+", second_number=5.0)
-
-    # # The __init__ method is called automatically when creating the instance, so we don't need to call it explicitly
-
-    # is_supported = math_obj.is_currency_supported(currency="USD")
-
-    # # Print the results
-    # print(f"Arc Distance: {arc_distance}")
-    # print(f"Circle Area: {circle_area}")
-    # print(f"Cube Volume: {cube_volume}")
-    # print(f"Circle Circumference: {circle_circumference}")
-    # print(f"Hypotenuse: {hypotenuse}")
-    # print(f"Rectangle Area: {rectangle_area}")
-    # print(f"Sphere Surface Area: {sphere_surface_area}")
-    # print(f"Prism Surface Area: {prism_surface_area}")
-    # print(f"Sphere Volume: {sphere_volume}")
-    # print(f"Calculation Result: {calculation_result}")
-    # print(f"Is Currency Supported: {is_supported}")
-
-    
 if __name__ == "__main__":
-    main()
+     main()
